@@ -1,0 +1,51 @@
+﻿@model Portal.WRC.Total.com.Models.Equipes
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Equipes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nome:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.eqp_nome_completo)
+        </dd>
+        <dt class="col-sm-2">
+            Chefe equipe:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.eqp_nome_chefe_equipe)
+        </dd>
+        <dt class="col-sm-2">
+           País
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.eqp_pais_origem)
+        </dd>
+        <dt class="col-sm-2">
+            site:
+        </dt>
+
+        <dd class="col-sm-10">        
+              <a href="@Html.DisplayFor(model => model.eqp_url_site)">Clique pra acessar</a>
+            
+
+        </dd>
+        <dt class="col-sm-2">
+            Email:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.eqp_url_email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Retornar</a>
+</div>

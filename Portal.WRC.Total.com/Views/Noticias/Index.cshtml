@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Portal.WRC.Total.com.Models.Noticia>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Últimas noticias:</h1>
+
+<p>
+    <a asp-action="Create">Adicionar</a>
+</p>
+<table class="table" id="ExampleDataTable">
+    <thead>
+        <tr>
+            <th>
+                Título:
+            </th>
+            <th>
+                Texto:
+            </th>
+            <th>
+                País:
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.ntc_titulo_noticia)</b>
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ntc_texto_noticia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ntc_pais_rally)
+                </td>
+
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Ver mais</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#ExampleDataTable").DataTable();
+        })
+    </script>
+}

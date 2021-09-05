@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Portal.WRC.Total.com</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Sobre o WRC</h1>
+        <h4>O campeonato mundial de Rally é a categoria principal do Rally mundial</h4>
+        <table>       
+            <tr>
+                
+                <td> <a href="@Url.Action("Index", "Pilotos")">Quais são os pilotos?</a></td>
+            </tr>
+           
+            
+            <tr>
+                <td><a href="@Url.Action("Index", "Equipes")">Quais são as equipes?</a></td>
+            </tr>
+            <tr>
+                <td><p>Quando é o próximo Rally?</p></td>
+            </tr>
+        </table>
+        <img id="imagem_logo_index" src="~/imgs/foto_logo_aboutWrc.jpg" />
+    </div>
+</body>

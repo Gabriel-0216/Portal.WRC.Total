@@ -1,0 +1,68 @@
+﻿@model Portal.WRC.Total.com.Models.Equipes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Equipes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="eqp_nome_curto" class="control-label"></label>
+                <input asp-for="eqp_nome_curto" class="form-control" />
+                <span asp-validation-for="eqp_nome_curto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqp_nome_completo" class="control-label"></label>
+                <input asp-for="eqp_nome_completo" class="form-control" />
+                <span asp-validation-for="eqp_nome_completo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqp_url_site" class="control-label"></label>
+                <input asp-for="eqp_url_site" class="form-control" />
+                <span asp-validation-for="eqp_url_site" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqp_url_email" class="control-label"></label>
+                <input asp-for="eqp_url_email" class="form-control" />
+                <span asp-validation-for="eqp_url_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqp_nome_chefe_equipe" class="control-label"></label>
+                <input asp-for="eqp_nome_chefe_equipe" class="form-control" />
+                <span asp-validation-for="eqp_nome_chefe_equipe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqp_pais_origem" class="control-label"></label>
+                <input asp-for="eqp_pais_origem" class="form-control" />
+                <span asp-validation-for="eqp_pais_origem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqp_data_insercao" class="control-label"></label>
+                <input asp-for="eqp_data_insercao" class="form-control" />
+                <span asp-validation-for="eqp_data_insercao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eqp_data_atualizacao" class="control-label"></label>
+                <input asp-for="eqp_data_atualizacao" class="form-control" />
+                <span asp-validation-for="eqp_data_atualizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retornar para a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

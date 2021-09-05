@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Portal.WRC.Total.com.Models.Piloto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Pilotos</h1>
+
+<p>
+    <a asp-action="Create">Adicionar</a>
+</p>
+<table class="table" id="ExampleDataTable">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Co-piloto
+            </th>
+            <th>
+                Equipe
+            </th>
+            <th>
+                Vitórias
+            </th>
+            <th>
+                Títulos
+            </th>
+            <th>
+                Nacionalidade
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.plt_nome_curto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plt_nome_co_piloto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plt_nome_equipe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plt_qtde_vitorias_wrc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plt_qtde_titulos_wrc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plt_pais_nascimento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Ver mais</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#ExampleDataTable").DataTable();
+        })
+    </script>
+}

@@ -1,0 +1,80 @@
+﻿@model Portal.WRC.Total.com.Models.Piloto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Piloto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="plt_nome_curto" class="control-label"></label>
+                <input asp-for="plt_nome_curto" class="form-control" />
+                <span asp-validation-for="plt_nome_curto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="plt_nome_completo" class="control-label"></label>
+                <input asp-for="plt_nome_completo" class="form-control" />
+                <span asp-validation-for="plt_nome_completo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="plt_data_nascimento" class="control-label"></label>
+                <input asp-for="plt_data_nascimento" class="form-control" />
+                <span asp-validation-for="plt_data_nascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="plt_data_atualizacao" class="control-label"></label>
+                <input asp-for="plt_data_atualizacao" class="form-control" />
+                <span asp-validation-for="plt_data_atualizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="plt_pais_nascimento" class="control-label"></label>
+                <input asp-for="plt_pais_nascimento" class="form-control" />
+                <span asp-validation-for="plt_pais_nascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="plt_nome_equipe" class="control-label"></label>
+                <input asp-for="plt_nome_equipe" class="form-control" />
+                <span asp-validation-for="plt_nome_equipe" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="plt_nome_co_piloto" class="control-label"></label>
+                <input asp-for="plt_nome_co_piloto" class="form-control" />
+                <span asp-validation-for="plt_nome_co_piloto" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="plt_qtde_vitorias_wrc" class="control-label"></label>
+                <input asp-for="plt_qtde_vitorias_wrc" class="form-control" />
+                <span asp-validation-for="plt_qtde_vitorias_wrc" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="plt_qtde_titulos_wrc" class="control-label"></label>
+                <input asp-for="plt_qtde_titulos_wrc" class="form-control" />
+                <span asp-validation-for="plt_qtde_titulos_wrc" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
