@@ -28,6 +28,7 @@ namespace Portal.WRC.Total.com
             services.AddDbContext<EquipesContexto>(op => op.UseSqlServer(Configuration.GetConnectionString("conexaoBanco")));
             services.AddDbContext<PilotosContexto>(op => op.UseSqlServer(Configuration.GetConnectionString("conexaoBanco")));
             services.AddDbContext<NoticiasContexto>(op => op.UseSqlServer(Configuration.GetConnectionString("conexaoBanco")));
+            services.AddDbContext<RallyContexto>(op => op.UseSqlServer(Configuration.GetConnectionString("conexaoBanco")));
             services.AddControllersWithViews();
 
 

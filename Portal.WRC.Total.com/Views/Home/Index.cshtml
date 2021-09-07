@@ -8,10 +8,31 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
 <body>
     <div class="text-center">
-        <h1 class="display-4">Bem vindo ao WRCTotal.com</h1>
-        <p>Seu site número um de noticías sobre o WRC</p>
-        <img id="imagem_logo_index" src="~/imgs/Imagem_Hyundai_Agua.jpg" />
+        <h1 class="display-4">Bem vindo ao Portal WRC.Total.com</h1>
+        <h4>O campeonato mundial de Rally é a categoria principal do Rally mundial</h4>
+        <h5>Pilotos e equipes lutam bravamente por décimos de segundo em estradas curtas de asfalto, cascalho solto e até neve</h5>
+
+        <table>
+            <tr>
+                <td>
+                    <img src="~/videos/gifFiesta.gif" />
+                </td>
+                <td>
+                    <img src="~/videos/gifI20.gif" />
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            <h2>Saiba mais:</h2>
+            <h3><a href="@Url.Action("Index", "Noticias")">Últimas notícias</a></h3>
+            <h3><a href="@Url.Action("Index", "Pilotos")">Conheça os pilotos</a></h3>
+            <h3><a href="@Url.Action("Index", "Equipes")">Conheça as equipes</a></h3>
+            <h3><a href="@Url.Action("Index", "Rally")">Quando é o próximo Rally?</a></h3>
+        </div>
+        <img id="imagem_logo_index" src="~/imgs/foto_logo_aboutWrc.jpg" />
     </div>
 </body>

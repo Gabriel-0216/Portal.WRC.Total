@@ -25,6 +25,10 @@ namespace Portal.WRC.Total.com.Controllers
             return View(await _context.Noticia.ToListAsync());
         }
 
+        public async Task<IActionResult> Home()
+        {
+            return View(await _context.Noticia.FirstOrDefaultAsync());
+        }
         public async Task<IActionResult> RetornarSoUm()
         {
             return View(await _context.Noticia.FirstOrDefaultAsync());
@@ -61,6 +65,8 @@ namespace Portal.WRC.Total.com.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ntc_titulo_noticia,ntc_curta_descricao,ntc_texto_noticia,ntc_pais_rally,ntc_data_insercao,ntc_data_atualizacao")] Noticia noticia)
         {
+            noticia.ntc_data_insercao = DateTime.Now;
+            noticia.ntc_data_atualizacao = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(noticia);

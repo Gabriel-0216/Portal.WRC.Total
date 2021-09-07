@@ -1,0 +1,50 @@
+﻿@model Portal.WRC.Total.com.Models.Rally
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="cld_nome_curto_rally" class="control-label">Nome</label>
+                <input asp-for="cld_nome_curto_rally" class="form-control" />
+                <span asp-validation-for="cld_nome_curto_rally" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cld_nome_completo_rally" class="control-label">Nome completo</label>
+                <input asp-for="cld_nome_completo_rally" class="form-control" />
+                <span asp-validation-for="cld_nome_completo_rally" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cld_pais_rally" class="control-label">País</label>
+                <input asp-for="cld_pais_rally" class="form-control" />
+                <span asp-validation-for="cld_pais_rally" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cld_cidade_rally" class="control-label">Cidade</label>
+                <input asp-for="cld_cidade_rally" class="form-control" />
+                <span asp-validation-for="cld_cidade_rally" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cld_data_inicio_rally" class="control-label">Data de início</label>
+                <input asp-for="cld_data_inicio_rally" class="form-control" />
+                <span asp-validation-for="cld_data_inicio_rally" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retornar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

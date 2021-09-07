@@ -18,6 +18,10 @@ namespace Portal.WRC.Total.com.Controllers
             _logger = logger;
         }
 
+        public IActionResult PartialViewRedesSociais()
+        {
+            return PartialView();
+        }
         public IActionResult Index()
         {
             return View();

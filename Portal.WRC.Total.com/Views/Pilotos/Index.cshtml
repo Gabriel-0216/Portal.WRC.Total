@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Adicionar</a>
 </p>
-<table class="table" id="ExampleDataTable">
+<table class="table" id="GridIndexNoticias">
     <thead>
         <tr>
             <th>
@@ -36,35 +36,43 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.plt_nome_curto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plt_nome_co_piloto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plt_nome_equipe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plt_qtde_vitorias_wrc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plt_qtde_titulos_wrc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plt_pais_nascimento)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Ver mais</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plt_nome_curto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plt_nome_co_piloto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plt_nome_equipe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plt_qtde_vitorias_wrc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plt_qtde_titulos_wrc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plt_pais_nascimento)
+                </td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver mais</a> |
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
 
+<br />
+<br />
+<br />
+<br />
+
+<section>
+    <partial name="PartialViewRedesSociais" />
+</section>
 
 @section scripts{
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.css" />
@@ -72,7 +80,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#ExampleDataTable").DataTable();
+            $("#GridIndexNoticias").DataTable();
         })
     </script>
 }

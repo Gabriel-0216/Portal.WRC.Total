@@ -4,51 +4,84 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Noticia</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            Título
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ntc_titulo_noticia)
-        </dd>
-        <dt class = "col-sm-2">
-            Descrição rápida:
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ntc_curta_descricao)
-        </dd>
-        <dt class = "col-sm-2">
-            Texto completo:
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ntc_texto_noticia)
-        </dd>
-        <dt class = "col-sm-2">
-            País:
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ntc_pais_rally)
-        </dd>
-        <dt class = "col-sm-2">
-            Data de inserção:
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ntc_data_insercao)
-        </dd>
-        <dt class = "col-sm-2">
-            Data de atualização:
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ntc_data_atualizacao)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
-    <a asp-action="Index">Retornar</a>
-</div>
+<br />
+<br />
+<br />
+
+<table class="table-borderless" id="GridIndexNoticias">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                <h1 style="text-align: center; color: darkred">@Html.DisplayFor(modelItem => Model.ntc_titulo_noticia)</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4 style="text-align: center">@Html.DisplayFor(modelItem => Model.ntc_curta_descricao)</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>@Html.DisplayFor(modelItem => Model.ntc_texto_noticia)</h4>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h7>
+                    Localização do Rally: <b>@Html.DisplayFor(model => model.ntc_pais_rally)</b>
+
+                </h7>
+                <h7>Data: <b>@Html.DisplayFor(model => model.ntc_data_insercao)</b></h7>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <section id="botoes">
+                    <a asp-action="Index">Retornar</a>
+                </section>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<section>
+    <partial name="PartialViewRedesSociais" />
+</section>

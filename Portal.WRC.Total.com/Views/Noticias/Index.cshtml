@@ -10,19 +10,15 @@
 <p>
     <a asp-action="Create">Adicionar</a>
 </p>
-<table class="table" id="ExampleDataTable">
+<table class="table-bordered" id="GridIndexNoticias">
     <thead>
         <tr>
             <th>
-                Título:
+                Notícias
             </th>
             <th>
-                Texto:
+
             </th>
-            <th>
-                País:
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -30,25 +26,45 @@
         {
             <tr>
                 <td>
-                    <b>@Html.DisplayFor(modelItem => item.ntc_titulo_noticia)</b>
+                    <h4 style="text-align: center;">@Html.DisplayFor(modelItem => item.ntc_titulo_noticia)</h4><br />
+                    @Html.DisplayFor(modelItem => item.ntc_curta_descricao)
                 </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.ntc_texto_noticia)
-                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ntc_curta_descricao)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.ntc_pais_rally)
                 </td>
 
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Ver mais</a> |
-                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver mais</a> |
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
                 </td>
+
             </tr>
         }
     </tbody>
 </table>
+
+<br />
+<br />
+<br />
+<br />
+
+<section>
+    <partial name="PartialViewRedesSociais" />
+</section>
+
+<br />
+<br />
+<section id="ultimoVideo">
+    <h4>Assista ao último vídeo do canal oficial do World Rally Championship</h4>
+    <iframe width="600" height="340" src="https://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=wrc" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<br />
 
 @section scripts{
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.css" />
@@ -56,7 +72,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#ExampleDataTable").DataTable();
+            $("#GridIndexNoticias").DataTable();
         })
     </script>
 }

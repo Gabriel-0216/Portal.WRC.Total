@@ -54,8 +54,11 @@ namespace Portal.WRC.Total.com.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,plt_nome_curto,plt_nome_completo,plt_data_nascimento,plt_data_insercao,plt_data_atualizacao,plt_pais_nascimento")] Piloto piloto)
+        public async Task<IActionResult> Create([Bind("Id,plt_nome_curto,plt_nome_completo,plt_data_nascimento,plt_pais_nascimento, plt_nome_equipe, plt_nome_co_piloto, plt_qtde_vitorias_wrc, plt_qtde_titulos_wrc")] Piloto piloto)
         {
+            piloto.plt_data_atualizacao = DateTime.Now;
+            piloto.plt_data_insercao = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 _context.Add(piloto);
@@ -86,8 +89,9 @@ namespace Portal.WRC.Total.com.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,plt_nome_curto,plt_nome_completo,plt_data_nascimento,plt_data_insercao,plt_data_atualizacao,plt_pais_nascimento")] Piloto piloto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,plt_nome_curto,plt_nome_completo,plt_data_nascimento,plt_pais_nascimento, plt_nome_equipe, plt_nome_co_piloto, plt_qtde_vitorias_wrc, plt_qtde_titulos_wrc")] Piloto piloto)
         {
+            var plt_data_atualizacao = DateTime.Now;
             if (id != piloto.Id)
             {
                 return NotFound();

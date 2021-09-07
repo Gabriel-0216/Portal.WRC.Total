@@ -18,15 +18,12 @@
         <a asp-action="Create"></a>
     </p>
     <div id="tela_index_equipes">
-        <table class="table">
+        <table class="table" id="GridIndexNoticias">
             <thead>
                 <tr>
-                    <td id="label_Baixo">Montadora</td>
-                    <td id="label_Baixo">Nome Completo</td>
-                    <td id="label_Baixo">Chefe de equipe</td>
+                    <td id="label_Baixo"><b>Nome Completo</b></td>
+                    <td id="label_Baixo"><b>Chefe de equipe</b></td>
                     <td class="labelCima"><b>País</b></td>
-                    <td class="labelCima"><b>URL Site</b></td>
-                    <td class="labelCima"><b>Email</b></td>
                     <th></th>
                 </tr>
             </thead>
@@ -34,9 +31,6 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td id="label_Baixo">
-                            @Html.DisplayFor(modelItem => item.eqp_nome_curto)
-                        </td>
                         <td id="label_Baixo">
                             @Html.DisplayFor(modelItem => item.eqp_nome_completo)
                         </td>
@@ -46,21 +40,36 @@
                         <td class="labelBaixo">
                             @Html.DisplayFor(modelItem => item.eqp_pais_origem)
                         </td>
-                        <td class="labelBaixo">
-                            @Html.DisplayFor(modelItem => item.eqp_url_site)
-                        </td>
-                        <td class="labelBaixo">
-                            @Html.DisplayFor(modelItem => item.eqp_url_email)
-                        </td>
 
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                        <td style="text-align: right">
+                            <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                            <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <section>
+        <partial name="PartialViewRedesSociais" />
+    </section>
 </body>
+
+
+
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#GridIndexNoticias").DataTable();
+        })
+    </script>
+}

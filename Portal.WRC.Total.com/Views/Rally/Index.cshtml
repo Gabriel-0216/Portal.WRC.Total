@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Portal.WRC.Total.com.Models.Rally>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Calendário WRC</h1>
+<p>
+    <a asp-action="Create">Adicionar</a>
+</p>
+<table class="table" id="GridIndexNoticias">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th style="text-align: right;">
+                Data de início
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cld_nome_curto_rally)
+                </td>
+                <td style="text-align: right;" >
+                    @Html.DisplayFor(modelItem => item.cld_data_inicio_rally)
+                </td>
+                <td style="text-align: right;">
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver mais</a> |
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<br />
+<br />
+<br />
+<br />
+
+<section>
+    <partial name="PartialViewRedesSociais" />
+</section>
+
+
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.1/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#GridIndexNoticias").DataTable();
+        })
+    </script>
+}

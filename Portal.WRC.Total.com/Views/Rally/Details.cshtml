@@ -1,0 +1,75 @@
+﻿@model Portal.WRC.Total.com.Models.Rally
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<table class="table-borderless" id="GridIndexNoticias">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                <h3 style="text-align: center">@Html.DisplayFor(modelItem => Model.cld_nome_curto_rally)</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h5 style="text-align: center">@Html.DisplayFor(modelItem => Model.cld_nome_completo_rally)</h5>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6 style="text-align: center;">@Html.DisplayFor(modelItem => Model.cld_pais_rally)</h6>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6 style="text-align: center;">@Html.DisplayFor(modelItem => Model.cld_cidade_rally)</h6>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6 style="text-align: center;">@Html.DisplayFor(modelItem => Model.cld_data_inicio_rally)</h6>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <section id="botoes">
+                    <a asp-action="Index">Retornar</a>
+                </section>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+
+
+
+<br />
+<br />
+
+
+<section>
+    <partial name="PartialViewRedesSociais" />
+</section>

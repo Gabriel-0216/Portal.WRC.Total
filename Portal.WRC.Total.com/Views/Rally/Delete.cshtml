@@ -1,0 +1,62 @@
+﻿@model Portal.WRC.Total.com.Models.Rally
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Tem certeza em deletar?</h3>
+
+<div>
+    <h4>Rally</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cld_nome_curto_rally)
+        </dd>
+        <dt class = "col-sm-2">
+            Nome completo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cld_nome_completo_rally)
+        </dd>
+        <dt class = "col-sm-2">
+            País
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cld_pais_rally)
+        </dd>
+        <dt class = "col-sm-2">
+            Cidade
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cld_cidade_rally)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de inserção do registro
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cld_data_insercao)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de atualização
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cld_data_atualizacao)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de início do vento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cld_data_inicio_rally)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Estou ciente dos riscos e quero deletar" class="btn btn-danger" /> |
+        <a asp-action="Index">Retornar</a>
+    </form>
+</div>

@@ -14,37 +14,37 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="ntc_titulo_noticia" class="control-label"></label>
+                <label asp-for="ntc_titulo_noticia" class="control-label">Título</label>
                 <input asp-for="ntc_titulo_noticia" class="form-control" />
                 <span asp-validation-for="ntc_titulo_noticia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ntc_curta_descricao" class="control-label"></label>
+                <label asp-for="ntc_curta_descricao" class="control-label">Descrição</label>
                 <input asp-for="ntc_curta_descricao" class="form-control" />
                 <span asp-validation-for="ntc_curta_descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ntc_texto_noticia" class="control-label"></label>
-                <input asp-for="ntc_texto_noticia" class="form-control" />
+                <label asp-for="ntc_texto_noticia" class="control-label">Texto</label>
+                <textarea asp-for="ntc_texto_noticia" class="form-check"></textarea>          
                 <span asp-validation-for="ntc_texto_noticia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ntc_pais_rally" class="control-label"></label>
+                <label asp-for="ntc_pais_rally" class="control-label">País</label>
                 <input asp-for="ntc_pais_rally" class="form-control" />
                 <span asp-validation-for="ntc_pais_rally" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ntc_data_insercao" class="control-label"></label>
+                <label asp-for="ntc_data_insercao" class="control-label">Data de inserção</label>
                 <input asp-for="ntc_data_insercao" class="form-control" />
                 <span asp-validation-for="ntc_data_insercao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ntc_data_atualizacao" class="control-label"></label>
+                <label asp-for="ntc_data_atualizacao" class="control-label">Data de atualização</label>
                 <input asp-for="ntc_data_atualizacao" class="form-control" />
                 <span asp-validation-for="ntc_data_atualizacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-success" />
             </div>
         </form>
     </div>
