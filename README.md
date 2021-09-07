@@ -1,6 +1,6 @@
 # Portal.WRC.Total
 
-
+[PT-BR]
 Esse é um projeto que eu desenvolvi rapidamente pra estudar .NET Core 5 (Padrão MVC)
 
   O objetivo era criar um portal de notícias relacionado ao Campeonato Mundial de Rali da FIA (WRC) 
@@ -8,7 +8,7 @@ Esse é um projeto que eu desenvolvi rapidamente pra estudar .NET Core 5 (Padrã
   Irei continuar desenvolvendo esse portal a medida que for aprendendo coisas novas.
 
 
-
+[English]
 This is a project I developed just to study and develop my .NET Core 5 skills (MVC) =] 
 
   The main goal was to create a news website about World Rally Championship 
